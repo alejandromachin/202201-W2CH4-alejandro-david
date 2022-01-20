@@ -3,15 +3,15 @@ class CoolArray {
     for (const i in arguments) {
       if (Object.hasOwnProperty.call(arguments, i)) {
         this[i] = arguments[i];
-        this.tamaño = arguments[i];
+        this.length = arguments[i];
       }
     }
   }
 
   push(value) {
-    const index = this.tamaño + 1;
+    const index = this.length + 1;
     this[index] = value;
-    this.tamaño = index;
+    this.length = index;
   }
 }
 
