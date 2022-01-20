@@ -10,6 +10,17 @@ class CoolArray {
   }
 
   push(value) {
-    this.index3 = value;
+    if (this.index0 !== undefined) {
+      if (this.index1 !== undefined) {
+        if (this.index2 !== undefined) {
+          this.index3 = value;
+        }
+        this.index2 = value;
+      } else {
+        this.index1 = value;
+      }
+    } else {
+      this.index0 = value;
+    }
   }
 }
