@@ -1,26 +1,17 @@
 class CoolArray {
   constructor() {
-    for (let i = 0; i < arguments.length; i++) {
-      this[i] = arguments[i];
+    for (const i in arguments) {
+      if (Object.hasOwnProperty.call(arguments, i)) {
+        this[i] = arguments[i];
+        this.tamaño = arguments[i];
+      }
     }
-    this.length = arguments.length;
   }
-}
-
 
   push(value) {
-    if (this.index0 !== undefined) {
-      if (this.index1 !== undefined) {
-        if (this.index2 !== undefined) {
-          this.index3 = value;
-        }
-        this.index2 = value;
-      } else {
-        this.index1 = value;
-      }
-    } else {
-      this.index0 = value;
-    }
+    const index = this.tamaño + 1;
+    this[index] = value;
+    this.tamaño = index;
   }
 }
 
